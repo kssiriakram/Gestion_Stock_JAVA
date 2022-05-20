@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniprojet.HelloController">
+  <tabs>
+    <Tab fx:id="nom_acteur_tab" onSelectionChanged="#onChanged_acteur_tab" text="acteur">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="134.0" layoutY="14.0" prefHeight="18.0" prefWidth="348.0" text="Gestion des clients et fournisseurs">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="52.0" layoutY="41.0" prefHeight="18.0" prefWidth="286.0" text=" nom de l'acteur" />
+                  <TextField fx:id="nom_acteur_input" layoutX="52.0" layoutY="59.0" onAction="#onChanged_nom_acteur" prefHeight="26.0" prefWidth="325.0" />
+                  <Label layoutX="52.0" layoutY="92.0" text="type" />
+                  <Label layoutX="50.0" layoutY="128.0" prefHeight="18.0" prefWidth="185.0" text="adresse de l'acteur" />
+                  <TextField fx:id="adresse_acteur_input" layoutX="52.0" layoutY="153.0" onAction="#onChanged_adresse_acteur" prefHeight="26.0" prefWidth="329.0" />
+                  <Label layoutX="50.0" layoutY="199.0" prefHeight="18.0" prefWidth="258.0" text="contact de l'acteur" />
+                  <TextField fx:id="contact_acteur_input" layoutX="52.0" layoutY="230.0" onAction="#onChanged_contact_acteur" prefHeight="26.0" prefWidth="330.0" />
+                  <Button fx:id="submit_acteur_ok" layoutX="383.0" layoutY="290.0" mnemonicParsing="false" onAction="#onSubmit_acteur_ok" prefHeight="26.0" prefWidth="65.0" text="Ok" />
+                  <Button fx:id="submit_acteur_cancel" layoutX="489.0" layoutY="290.0" mnemonicParsing="false" onAction="#onSubmit_acteur_cancel" text="Cancel" />
+                  <RadioButton fx:id="client_ratio" layoutX="108.0" layoutY="92.0" mnemonicParsing="false" onAction="#onChanged_ratio" text="Client">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Toogle_acteur" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="fournisseur_ratio" layoutX="236.0" layoutY="92.0" mnemonicParsing="false" onAction="#onChanged_ratio" text="Fournisseur" toggleGroup="$Toogle_acteur" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="Ligne_facture_tab" onSelectionChanged="#onChanged_Ligne_facture_tab" text="Ligne de facture">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="126.0" layoutY="21.0" prefHeight="18.0" prefWidth="348.0" text="Gestion des lignes de factures">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="62.0" layoutY="68.0" text="numero de l'article" />
+                  <TextField fx:id="num_article_input" layoutX="62.0" layoutY="92.0" onAction="#onChanged_num_article" prefHeight="26.0" prefWidth="325.0" />
+                  <Label layoutX="62.0" layoutY="138.0" text="Prix" />
+                  <TextField fx:id="prix_input" layoutX="62.0" layoutY="159.0" onAction="#onChanged_prix" prefHeight="26.0" prefWidth="325.0" />
+                  <Label layoutX="59.0" layoutY="204.0" text="Quantite" />
+                  <TextField fx:id="qte_input" layoutX="59.0" layoutY="222.0" onAction="#onChanged_qte" prefHeight="26.0" prefWidth="325.0" />
+                  <Button fx:id="submit_Ligne_facture_ok" layoutX="388.0" layoutY="284.0" mnemonicParsing="false" onAction="#onSubmit_Ligne_facture_ok" prefHeight="26.0" prefWidth="44.0" text="Ok" />
+                  <Button fx:id="submit_ligne_facture_cancel" layoutX="460.0" layoutY="284.0" mnemonicParsing="false" onAction="#onSubmit_Ligne_facture_cancel" text="Cancel" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="article_tab" onSelectionChanged="#onChanged_article_tab" text="article">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="117.0" layoutY="26.0" prefHeight="18.0" prefWidth="348.0" text="Gestion des articles">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="54.0" layoutY="78.0" text=" Libelle de l'article" />
+                  <TextField fx:id="libelle_input" layoutX="54.0" layoutY="110.0" onAction="#onChanged_article_libelle" prefHeight="26.0" prefWidth="325.0" />
+                  <Button fx:id="submit_article_ok" layoutX="380.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSubmit_article_ok" prefHeight="26.0" prefWidth="44.0" text="Ok" />
+                  <Button fx:id="submit_article_cancel" layoutX="465.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSubmit_article_cancel" text="Cancel" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="Facture_vente_tab" onSelectionChanged="#onChanged_Facture_vente_tab" text="Facture de vente">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="114.0" layoutY="14.0" prefHeight="18.0" prefWidth="348.0" text="Gestion des factures de vente">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="65.0" layoutY="41.0" prefHeight="18.0" prefWidth="156.0" text="id_client" />
+                  <TextField fx:id="id_client_input" layoutX="67.0" layoutY="59.0" onAction="#onChanged_id_client_input" prefHeight="26.0" prefWidth="325.0" />
+                  <Label layoutX="67.0" layoutY="189.0" text="Date" />
+                  <DatePicker fx:id="date_input" accessibleRole="IMAGE_VIEW" layoutX="114.0" layoutY="186.0" onAction="#onChanged_date_input" promptText="choisissez une date">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </DatePicker>
+                  <Label layoutX="66.0" layoutY="217.0" text="ajouter des lignes de facture" />
+                  <TextField fx:id="id_ligne_facture_input" layoutX="65.0" layoutY="247.0" onAction="#onChanged_ligne_facture" prefHeight="26.0" prefWidth="325.0" promptText="id_ligne de facture" />
+                  <Button fx:id="submit_lignes_facture" layoutX="409.0" layoutY="245.0" mnemonicParsing="false" onAction="#onSubmit_ligne_facture" text="ajouter" />
+                  <Button fx:id="submit_facture_vente_ok" layoutX="465.0" layoutY="284.0" mnemonicParsing="false" onAction="#onSubmit_facture_vente_ok" text="Ok" />
+                  <Button fx:id="submit_facture_vente_cancel" layoutX="530.0" layoutY="284.0" mnemonicParsing="false" onAction="#onSubmit_facture_vente_cancel" text="Cancel" />
+                  <Label layoutX="65.0" layoutY="109.0" text="id_facture" />
+                  <TextField fx:id="facture_vente_input" layoutX="69.0" layoutY="139.0" onAction="#onChanged_Facture_vente_input" prefHeight="26.0" prefWidth="323.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="Facture_achat_tab" onSelectionChanged="#onChanged_Facture_achat_tab" text="Facture d'achat">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="118.0" layoutY="14.0" prefHeight="18.0" prefWidth="348.0" text="Gestion des factures d'achat">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="71.0" layoutY="41.0" prefHeight="18.0" prefWidth="156.0" text="id_fournisseur" />
+                  <TextField fx:id="id_fournisseur_input" layoutX="73.0" layoutY="59.0" onAction="#onChanged_id_fournisseur" prefHeight="26.0" prefWidth="325.0" />
+                  <Label layoutX="73.0" layoutY="191.0" text="Date" />
+                  <DatePicker fx:id="date_input1" accessibleRole="IMAGE_VIEW" layoutX="118.0" layoutY="187.0" onAction="#onChanged_date_input" promptText="choisissez une date">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </DatePicker>
+                  <Label layoutX="73.0" layoutY="226.0" text="ajouter des lignes de facture" />
+                  <TextField fx:id="ligne_facture1" layoutX="73.0" layoutY="256.0" onAction="#onChanged_ligne_facture1" prefHeight="26.0" prefWidth="325.0" promptText="id_ligne de facture" />
+                  <Button fx:id="ligne_facture_submit1" layoutX="419.0" layoutY="253.0" mnemonicParsing="false" onAction="#onSubmit_ligne_facture1" prefHeight="28.0" prefWidth="57.0" text="ajouter" />
+                  <Button fx:id="facture_achat_submit_ok" layoutX="470.0" layoutY="288.0" mnemonicParsing="false" onAction="#onSubmit_facture_achat_ok" text="Ok" />
+                  <Button fx:id="facture_achat_submit_cancel" layoutX="530.0" layoutY="288.0" mnemonicParsing="false" onAction="#onSubmit_facture_achat_cancel" text="Cancel" />
+                  <Label layoutX="71.0" layoutY="101.0" text="id_facture" />
+                  <TextField fx:id="facture_achat_input" layoutX="74.0" layoutY="135.0" onAction="#onChanged_Facture_achat_input" prefHeight="26.0" prefWidth="323.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
